@@ -16,15 +16,19 @@ public abstract class Conta implements IConta{
     }
 
     public void depositar (double valor) {
+        if (valor <= 0) {
+            System.out.println("Depósito inválido");
+        } else {
+            saldo+=valor;
+        }
 
-        saldo+=valor;
     }
 
     public void sacar (double valor){
         if (valor <= 0) {
-
+            System.out.println("Saque inválido");
         } else if (valor > saldo) {
-
+            System.out.println("Saque inválido");
         } else {
             saldo -= valor;
 
